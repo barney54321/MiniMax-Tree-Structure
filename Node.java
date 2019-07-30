@@ -22,9 +22,9 @@ public class Node {
         this.rightChild = rightChild;
         this.rightChild.setParent(this);
         this.parent = null;
-        this.layer = leftChild.getLayer();
+        this.layer = leftChild.getLayer() - 1;
 
-        if (this.layer % 2 == 0) {
+        if (this.layer % 2 == 1) {
             // Take the lower of the two children
             this.value = Math.min(leftChild.getValue(), rightChild.getValue());
         } else {
