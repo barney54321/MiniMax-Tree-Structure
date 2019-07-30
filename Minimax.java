@@ -36,7 +36,13 @@ public class Minimax {
     public static void main(String[] args) {
 
         Minimax test = new Minimax(new int[] {1, 2, 3, 4, 5, 6, 7, 8});
-        System.out.println(test.getHead().getValue());
+        System.out.println(test.getHead().getValue()); // Should be 6
+
+        Minimax test1 = new Minimax(new int[] {-10, 40, 20, 100});
+        System.out.println(test1.getHead().getValue()); // Should be 20
+
+        Minimax test2 = new Minimax(new int[] {0, 5, -5, 10, 7, 8, 1, 1, 3, -6, 9, 8, 14, -8, 6, -1});
+        System.out.println(test2.getHead().getValue()); // Should be 0
 
     }
 }
