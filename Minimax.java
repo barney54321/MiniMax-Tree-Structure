@@ -2,32 +2,41 @@ import java.util.ArrayList;
 
 public class Minimax {
 
+    // Root node of the tree
     private Node head;
 
     public Minimax(int[] leaves) {
         ArrayList<Node> children = new ArrayList<Node>();
         ArrayList<Node> parents = new ArrayList<Node>();
 
+        // Creates the leaf nodes from the array
         for (int i = 0; i < leaves.length; i++) {
             children.add(new Node(leaves[i], leaves.length));
         }
 
+        // Iterates up the tree until at the root
         while(children.size() > 1) {
+
+            // Creates parent nodes made up from combination of sibling children
             for (int i = 0; i < children.size(); i += 2) {
                 parents.add(new Node(children.get(i), children.get(i + 1)));
             }
 
+            // Sets children to be parents
             children.clear();
             for (int i = 0; i < parents.size(); i++) {
                 children.add(parents.get(i));
             }
 
+            // Resets parents for next iteration
             parents.clear();
         }
 
+        // Set the head to be the root node
         this.head = children.get(0);
     }
 
+    // Getter method for the root
     public Node getHead() {
         return this.head;
     }
@@ -48,6 +57,9 @@ public class Minimax {
 
         Minimax test3 = new Minimax(new int[] {-1, 1});
         System.out.println(test3.getHead().getValue()); // Should be 1
+
+        Minimax test4 = new Minimax(new int[] {1, 1, 1, 1});
+        System.out.println(test4.getHead().getValue()); // Should be 1
 
     }
 }
