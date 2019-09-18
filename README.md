@@ -9,4 +9,10 @@ An example of a minimax tree:
 
 Source: https://en.wikipedia.org/wiki/Minimax
 
-In this challenge, your aim is to construct the Minimax tree given all the potential outcomes. The first move is made by Player One, whose goal is to maximise their potential score.
+In this challenge, your aim is to construct the Minimax tree given all the potential outcomes. The first move is made by Player One, whose goal is to maximise their potential score. You are provided a MiniMax class and a Node
+class. Refer to the scaffold for information on each of the functions.
+
+### Notes
+* In this challenge, the Minimax tree is a binary tree
+* The number of outcomes provded will be a power of 2
+* The Node constructor can have any parameters you feel necessary
