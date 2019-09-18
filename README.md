@@ -16,3 +16,4 @@ class. Refer to the scaffold for information on each of the functions.
 * In this challenge, the Minimax tree is a binary tree
 * The number of outcomes provded will be a power of 2
 * The Node constructor can have any parameters you feel necessary
+* Leaf nodes should have null for both children
